@@ -1,0 +1,32 @@
+body {
+  background-color: dodgerblue;
+  height: 100%;
+  font-family: monospace;
+}
+
+.container {
+  margin: 0 auto;
+  width: 600px;
+  font-size: 0;
+}
+
+#keyboard {
+  height: 300px;
+  width: inherit;
+}
+
+#oscilloscope {
+  background-color: lightpink;
+  border: 1px solid black;
+  border-bottom: 0;
+}
+
+button {
+  height: 48px;
+}
+
+.dollar-sign {
+  margin: 34px 34px auto;
+  text-align: center;
+  font-size: 48px;
+}
