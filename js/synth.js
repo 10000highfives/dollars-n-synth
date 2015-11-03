@@ -71,7 +71,7 @@ var xWidth = canvasWidth / analyser.frequencyBinCount;
 
 var draw = function() {
   requestAnimationFrame(function () {
-    //reset canvas width to clear canvas after each frame
+    //clear canvas after each frame
     canvasCntxt.clearRect(0, 0, canvasWidth, canvasHeight);
     canvasCntxt.beginPath();
 
@@ -100,15 +100,14 @@ fetch('/audio/Sandel-OpenCulture.mp3')
     return response.arrayBuffer();
   })
   .then(function(arrayBuffer) {
-    //decode teh array buffer into something the audio api can read, ie AudioBuffer
 
-    audioContext.decodeAudioData(arrayBuffer)
-      .then(function(decodedBuffer) {
-        //audio buffer is served up;
-        console.log('decoded Buffer ', decodedBuffer);
-        audioBuffer = decodedBuffer;
-        //return audioBuffer;
-      });
+    //decode teh array buffer into something the audio api can read, ie AudioBuffer
+    audioContext.decodeAudioData(arrayBuffer, function(decodedBuffer) {
+
+      //audio buffer is served up;
+      audioBuffer = decodedBuffer;
+    });
+    return audioBuffer;
   });
 
 
@@ -119,7 +118,7 @@ var playSample = function() {
   //point that at the returned decoded Audio buffer
   bufferSource.buffer = audioBuffer;
 
-  //make it louder
+  //lower osc gain while sample is playing
   volume.gain.value = .1;
 
   //connect it to output (destination)
@@ -127,5 +126,4 @@ var playSample = function() {
   bufferSource.start(audioContext.currentTime);
 };
 
-//set eventlistener to the play button:
 button.onclick = playSample;
