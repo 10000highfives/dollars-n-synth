@@ -94,7 +94,7 @@ draw();
 
 
 //fetch the file and return an array buffer. Then do something with it.
-fetch('/audio/Sandel-OpenCulture.mp3')
+fetch('Sandel-OpenCulture.mp3')
   .then(function(response) {
     return response.arrayBuffer();
   })
