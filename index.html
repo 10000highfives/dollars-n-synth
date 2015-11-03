@@ -7,18 +7,40 @@
     <link rel="stylesheet" href="/main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <h1>A synth about $$</h1>
     <div class="container">
       <canvas id="oscilloscope" width="587" height="210"></canvas>
       <div id="keyboard"></div>
-      </div>
+
       <div class="dollar-sign"  id="bling">
         <i class="fa fa-usd" id="bling"></i>
       </div>
+    </div>
+    <div class="about">
+      <h2>Did you ever wish you could play a synthesizer while a philospher talked about $?</h2>
+      <p>
+        you can play this synth with your computer keyboard and/or mouse while Michael Sandel speaks about stuff in his melodious tenor.
+        <ul>
+          <li>Click the "$" inside the green box to turn hear Mr. Sandel.</li>
+          <li>Play the synth.</li>
+          <li>Cash checks.</li>
+        </ul>
+      </p>
+      <p id="disclaimer">
+        <em>DISCLAIMER:
+        This is best on a computer--a little spotty on mobile. </br>
+        This is best on a modern web browser like Firefox or Chrome, <strong>not</strong> Internet Explorer or Safari.
+        </em>
+      </p>
+
 
     </div>
+    <div class="footer">
+      <footer>
+        <a href="http://www.jaredfowler.com">Jared Fowler</a> 2015
+      </footer>
+    </div>
 
-    <script type="text/javascript" src='/qwerty-hancock.js'></script>
-    <script type="text/javascript" src="/synth.js" ></script>
+    <script type="text/javascript" src='js/qwerty-hancock.js'></script>
+    <script type="text/javascript" src="js/synth.js" ></script>
   </body>
 </html>
