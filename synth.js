@@ -102,14 +102,11 @@ fetch('Sandel-OpenCulture.mp3')
   })
   .then(function(arrayBuffer) {
     //decode teh array buffer into something the audio api can read, ie AudioBuffer
-
-    audioContext.decodeAudioData(arrayBuffer)
-      .then(function(decodedBuffer) {
-        //audio buffer is served up;
-        console.log('decoded Buffer ', decodedBuffer);
-        audioBuffer = decodedBuffer;
-        //return audioBuffer;
-      });
+    audioContext.decodeAudioData(arrayBuffer, function(decodedBuffer) {
+      //audio buffer is served up;
+      audioBuffer = decodedBuffer;
+    });
+    return audioBuffer;
   });
 
 
