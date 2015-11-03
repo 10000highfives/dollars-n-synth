@@ -71,11 +71,13 @@ var xWidth = canvasWidth / analyser.frequencyBinCount;
 
 var draw = function() {
   requestAnimationFrame(function () {
-    //reset canvas width to clear canvas after each frame
-    canvas.width = canvasWidth;
 
     //analyze dataArray from output
     analyser.getByteTimeDomainData(dataArray);
+
+    //reset canvas width to clear canvas after each frame
+    canvasCntxt.clearRect(0, 0, canvasWidth, canvasHeight);
+    canvasCntxt.beginPath();
 
     for(var i = 0; i < dataArray.length; i++) {
       var yPos = dataArray[i] / 256,
