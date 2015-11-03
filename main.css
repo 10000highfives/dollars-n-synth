@@ -29,4 +29,5 @@ button {
   margin: 34px 34px auto;
   text-align: center;
   font-size: 48px;
+  cursor: pointer;
 }
