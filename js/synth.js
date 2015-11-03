@@ -72,7 +72,8 @@ var xWidth = canvasWidth / analyser.frequencyBinCount;
 var draw = function() {
   requestAnimationFrame(function () {
     //reset canvas width to clear canvas after each frame
-    canvas.width = canvasWidth;
+    canvasCntxt.clearRect(0, 0, canvasWidth, canvasHeight);
+    canvasCntxt.beginPath();
 
     //analyze dataArray from output
     analyser.getByteTimeDomainData(dataArray);
@@ -117,6 +118,9 @@ var playSample = function() {
 
   //point that at the returned decoded Audio buffer
   bufferSource.buffer = audioBuffer;
+
+  //make it louder
+  volume.gain.value = .1;
 
   //connect it to output (destination)
   bufferSource.connect(audioContext.destination);
