@@ -27,16 +27,19 @@ button {
 }
 
 .dollar-sign {
+  background-color: green;
   margin: 28px auto;
   font-size: 48px;
   border: 3px solid black;
   width: 60px;
   height: 60px;
   text-align: center;
+  cursor: pointer;
 }
 
 .fa {
-  padding: 2px auto;
+  padding: 2px;
+  color: #FFEF0A;
 }
 
 .about {
@@ -44,8 +47,8 @@ button {
   margin: 60px 0;
 }
 
-h2 {
 
+h2 {
   font-size: 32px;
   padding: 22px;
 
